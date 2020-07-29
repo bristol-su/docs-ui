@@ -67,3 +67,18 @@
 .toolbar .edit-this-page a {
   color: var(--toolbar-muted-color);
 }
+
+.view-on-github {
+  display: none;
+  padding-right: 0.5rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .view-on-github {
+    display: block;
+  }
+}
+
+.toolbar .view-on-github a {
+  color: var(--toolbar-font-color);
+}

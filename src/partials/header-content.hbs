@@ -10,34 +10,50 @@
     </div>
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
-        <a class="navbar-item" href="#">Home</a>
+        <a class="navbar-item" href="{{{or site.url (or siteRootUrl siteRootPath)}}}">Home</a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Products</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Product A</a>
-            <a class="navbar-item" href="#">Product B</a>
-            <a class="navbar-item" href="#">Product C</a>
+            {{#each site.components}}
+              {{#if (isproduct this.name)}}
+                <a class="navbar-item" href="{{relativize this.latest.url}}">{{this.latest.title}}</a>
+              {{/if}}
+            {{/each}}
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Services</a>
+          <a class="navbar-link" href="#">Modules</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Service A</a>
-            <a class="navbar-item" href="#">Service B</a>
-            <a class="navbar-item" href="#">Service C</a>
+            {{#each site.components}}
+              {{#if (ismodule this.name)}}
+                <a class="navbar-item" href="{{relativize this.latest.url}}">{{this.latest.title}}</a>
+              {{/if}}
+            {{/each}}
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="#">Resources</a>
+          <a class="navbar-link" href="#">Developers</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="#">Resource A</a>
-            <a class="navbar-item" href="#">Resource B</a>
-            <a class="navbar-item" href="#">Resource C</a>
+            {{#each site.components}}
+              {{#if (isdevelopers this.name)}}
+                <a class="navbar-item" href="{{relativize this.latest.url}}">{{this.latest.title}}</a>
+              {{/if}}
+            {{/each}}
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Integrations</a>
+          <div class="navbar-dropdown">
+            {{#each site.components}}
+              {{#if (isintegration this.name)}}
+                <a class="navbar-item" href="{{relativize this.latest.url}}">{{this.latest.title}}</a>
+              {{/if}}
+            {{/each}}
           </div>
         </div>
         <div class="navbar-item">
           <span class="control">
-            <a class="button is-primary" href="#">Download</a>
+            <a class="button is-primary" href="#">Get Started</a>
           </span>
         </div>
       </div>
