@@ -1,0 +1,26 @@
+name: Build and commit ui bundle
+
+on: 
+  push:
+    branches: [ master ]
+
+jobs:
+  ui-build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: npm install
+    
+    - name: Build UI bundle
+      run: gulp bundle
+      
+    - name: Commit result
+      uses: EndBug/add-and-commit@v4.3.0
+      with:
+        add: build/ui-bundle.zip
+        author_name: Toby Twigger
+        author_email: tobytwigger1@gmail.com
+        message: Build UI bundle
