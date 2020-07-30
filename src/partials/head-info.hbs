@@ -11,10 +11,22 @@
     {{/unless}}
     {{#with page.description}}
     <meta name="description" content="{{this}}">
+    <meta name="docsearch:description" content="{{this}}">
     {{/with}}
     {{#with page.keywords}}
     <meta name="keywords" content="{{this}}">
+    <meta name="docsearch:keywords" content="{{this}}">
     {{/with}}
     {{#with (or antoraVersion site.antoraVersion)}}
     <meta name="generator" content="Antora {{this}}">
+    {{/with}}
+    <meta name="docsearch:language" content="en" />
+    {{#with page.version}}
+      <meta name="docsearch:version" content="{{this}}">
+    {{/with}}
+    {{#with page.component}}
+      <meta name="docsearch:component" content="{{this}}">
+    {{/with}}
+    {{#with page.module}}
+      <meta name="docsearch:module" content="{{this}}">
     {{/with}}
