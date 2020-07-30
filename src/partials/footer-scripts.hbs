@@ -9,7 +9,7 @@ var search = docsearch({
   apiKey: '{{env.ALGOLIA_API_KEY}}',
   indexName: '{{env.ALGOLIA_INDEX_NAME}}',
   inputSelector: '#search-input',
-  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  autocompleteOptions: { autoselect: true, hint: false, keyboardShortcuts: ['/'] },
   algoliaOptions: { hitsPerPage: 10 }
 }).autocomplete
 search.on('autocomplete:closed', function () { search.autocomplete.setVal() })
