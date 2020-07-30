@@ -1,4 +1,4 @@
-name: Build and commit ui bundle
+name: Build UI Bundle
 
 on: 
   push:
