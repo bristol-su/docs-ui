@@ -1,2 +1,21 @@
 <script src="{{{uiRootPath}}}/js/site.js"></script>
+{{#if env.ALGOLIA_API_KEY}}
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script>
+var search = docsearch({
+  {{#with env.ALGOLIA_APP_ID}}
+  appId: '{{this}}',
+  {{/with}}
+  apiKey: '{{env.ALGOLIA_API_KEY}}',
+  indexName: '{{env.ALGOLIA_INDEX_NAME}}',
+  inputSelector: '#search-input',
+  autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+  algoliaOptions: { hitsPerPage: 10 }
+}).autocomplete
+search.on('autocomplete:closed', function () { search.autocomplete.setVal() })
+function focusSearchInput () { document.querySelector('#search-input').focus() }
+if (document.querySelector('.home-link.is-current')) window.addEventListener('load', focusSearchInput)
+</script>
+{{/if}}
+
 <script async src="{{{uiRootPath}}}/js/vendor/highlight.js"></script>
