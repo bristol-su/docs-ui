@@ -14,7 +14,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1400px) {
   .nav-container {
     font-size: calc(15.5 / var(--rem-base) * 1rem);
     flex: none;
@@ -41,7 +41,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1400px) {
   .nav {
     top: var(--navbar-height);
     box-shadow: none;
@@ -67,7 +67,7 @@ html.is-clipped--nav {
   height: var(--nav-panel-height);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1400px) {
   .nav-panel-menu {
     height: var(--nav-panel-height--desktop);
   }

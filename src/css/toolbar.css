@@ -28,7 +28,7 @@
   margin-right: -0.25rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1400px) {
   .nav-toggle {
     display: none;
   }
@@ -58,7 +58,7 @@
   padding-right: 0.5rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1400px) {
   .edit-this-page {
     display: block;
   }
@@ -73,7 +73,7 @@
   padding-right: 0.5rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1400px) {
   .view-on-github {
     display: block;
   }

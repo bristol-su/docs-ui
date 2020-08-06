@@ -2,11 +2,6 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" href="{{{or site.url (or siteRootUrl siteRootPath)}}}">{{site.title}}</a>
-      {{#if env.ALGOLIA_API_KEY}}
-        <div class="navbar-item hide-for-print">
-          <input id="search-input" type="text" placeholder="Search docs (/)">
-        </div>
-      {{/if}}
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -16,6 +11,11 @@
 
     <div id="topbar-nav" class="navbar-menu">
       <div class="navbar-end">
+        {{#if env.ALGOLIA_API_KEY}}
+          <div class="navbar-item hide-for-print">
+            <input id="search-input" type="text" placeholder="Search docs (/)">
+          </div>
+        {{/if}}
         <a class="navbar-item" href="{{{or site.url (or siteRootUrl siteRootPath)}}}">Home</a>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Products</a>
@@ -59,6 +59,7 @@
         </div>
         <div class="navbar-item">
           <span class="control">
+            <a class="button is-primary" href="https://tobytwigger.myjetbrains.com/youtrack/newIssue">Open an Issue</a>
             <a class="button is-primary" href="https://github.com/bristol-su/portal">Get Started</a>
           </span>
         </div>

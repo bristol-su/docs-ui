@@ -8,7 +8,7 @@
   padding: 0 1rem 4rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1400px) {
   .doc {
     flex: auto;
     font-size: var(--doc-font-size--desktop);
