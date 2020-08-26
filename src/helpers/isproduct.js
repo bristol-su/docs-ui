@@ -1,5 +1,5 @@
 'use strict'
 
 module.exports = (name) => {
-  return name.includes('playground') || name.includes('portal') || name.includes('control-frontend')
+  return ['playground', 'portal', 'control-frontend'].includes(name) || name === 'api-client-php'
 }
